@@ -6,6 +6,7 @@ urlpatterns = [
     # ex: /polls/
     path("", views.index, name="index"),
     # ex: /polls/5/
+    # the 'name' value as called by the {% url %} template tag
     path("<int:question_id>/", views.detail, name="detail"),
     # ex: /polls/5/results/
     path("<int:question_id>/results/", views.results, name="results"),
