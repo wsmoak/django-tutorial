@@ -8,16 +8,20 @@ It assumes you have completed the setup described on previous pages in the docs.
 
 ### Notes
 
+The directory structure differs slightly from the tutorial instructions.  There is a `config` directory instead of `mysite`.
+
+Here is some info about how I prefer to structure projects: https://github.com/wsmoak/wiki/wiki/Starting-a-Django-project-with-uv
+
 Be sure to activate the virtual environment, for example:
 
 `source .venv/bin/activate`
 
-Don't forget to start the database such as Postgres.
+The project is configured to use Postgres.  See config/settings.py for details.
 
 Start the app with
 
 `uv run python manage.py runserver`
 
-Run the the tests with
+There is an alternate settings file for the tests.  Run the the tests with
 
 `DJANGO_SETTINGS_MODULE=config.test_settings python manage.py test`
