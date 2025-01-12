@@ -17,3 +17,7 @@ Don't forget to start the database such as Postgres.
 Start the app with
 
 `uv run python manage.py runserver`
+
+Run the the tests with
+
+`DJANGO_SETTINGS_MODULE=config.test_settings python manage.py test`
