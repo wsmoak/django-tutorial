@@ -12,11 +12,25 @@ The directory structure differs slightly from the tutorial instructions.  There 
 
 Here is some info about how I prefer to structure projects: https://github.com/wsmoak/wiki/wiki/Starting-a-Django-project-with-uv
 
-Be sure to activate the virtual environment, for example:
+Be sure to set up and activate the virtual environment, for example:
+
+`uv sync`
 
 `source .venv/bin/activate`
 
 The project is configured to use Postgres.  See config/settings.py for details.
+
+In psql
+```
+CREATE USER tutorial_app_user WITH PASSWORD 'supersecret';
+CREATE DATABASE django_tutorial WITH OWNER tutorial_app_user;
+GRANT ALL PRIVILEGES ON DATABASE django_tutorial TO tutorial_app_user;
+
+create user tutorial_app_tester with password 'verysecret';
+alter user tutorial_app_tester CREATEDB;
+```
+
+`uv run python manage.py migrate`
 
 Start the app with
 
@@ -24,4 +38,4 @@ Start the app with
 
 There is an alternate settings file for the tests.  Run the the tests with
 
-`DJANGO_SETTINGS_MODULE=config.test_settings python manage.py test`
+`DJANGO_SETTINGS_MODULE=config.test_settings uv run python manage.py test`

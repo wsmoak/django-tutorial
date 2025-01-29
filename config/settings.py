@@ -78,7 +78,7 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "django_tutorial",
-        "USER": "demo_app_user",
+        "USER": "tutorial_app_user",
         "PASSWORD": "supersecret",
         "HOST": "127.0.0.1",
         "PORT": "5432",
